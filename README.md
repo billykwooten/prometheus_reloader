@@ -2,6 +2,8 @@
 
 The container in this repository will watch up to 2 files for changes, and if those files change it will hit an API endpoint. This is extremely useful when you need to reload Prometheus when the rules or configuration files changes.
 
+Based on: https://github.com/tolleiv/docker-misc/tree/master/2017-prometheus-reload
+
 ## Requirements
 
 * Linux / MacOSX, [`git bash`](https://git-scm.com/download/win) for Windows
@@ -30,4 +32,14 @@ Running Example:
 # ls
 testfile1 testfile2
 # docker run --name prometheus_reloader -d --restart always -v $(pwd):/mnt prometheus_reloader:dcd7135ef http://server.local:9090/-/reload /mnt/testfile1 /mnt/testfile2
+# docker logs prometheus_reloader
+>>>>>>>>>>>>>>>>>>>>>>>
+[1545286342] Starting Prometheus Reloader
+[1545286342] Loaded files:
+[1545286342]    - /mnt/first.rules
+[1545286342]    - /mnt/prometheus.yml
+[1545286342] Waiting for file changes...
+
+[1545286362] Trigger refresh due to /mnt/first.rules change
+[1545286372] Trigger refresh due to /mnt/prometheus.yml change
 ```
