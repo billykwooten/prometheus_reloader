@@ -1,0 +1,9 @@
+services:
+  - docker
+
+script:
+  - bash scripts/cibuild.sh 
+
+after_script:
+  - docker images
+
