@@ -1,10 +1,9 @@
 services:
   - docker
 
-branches:
-  only:
-    - master
-    - development 
+script:
+  - docker build --name prometheus_reloader .
 
-script: ./scripts/cibuild.sh
+after_script:
+  - docker images
 
