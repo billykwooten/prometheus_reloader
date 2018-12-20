@@ -36,10 +36,10 @@ testfile1 testfile2
 >>>>>>>>>>>>>>>>>>>>>>>
 [1545286342] Starting Prometheus Reloader
 [1545286342] Loaded files:
-[1545286342]    - /mnt/first.rules
-[1545286342]    - /mnt/prometheus.yml
+[1545286342]    - /mnt/testfile1
+[1545286342]    - /mnt/testfile2
 [1545286342] Waiting for file changes...
 
-[1545286362] Trigger refresh due to /mnt/first.rules change
-[1545286372] Trigger refresh due to /mnt/prometheus.yml change
+[1545286362] Trigger refresh due to /mnt/testfile1 change
+[1545286372] Trigger refresh due to /mnt/testfile2 change
 ```
