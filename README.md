@@ -14,7 +14,6 @@ Based on: https://github.com/tolleiv/docker-misc/tree/master/2017-prometheus-rel
 ## Building the container
 ```
 git clone https://github.com/billykwooten/prometheus_reloader.git
-cd prometheus_reloader
 bash scripts/cibuild.sh
 ```
 
