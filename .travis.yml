@@ -2,7 +2,7 @@ services:
   - docker
 
 script:
-  - docker build --name prometheus_reloader .
+  - cd prometheus_reloader; bash scripts/cibuild.sh 
 
 after_script:
   - docker images
