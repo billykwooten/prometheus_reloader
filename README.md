@@ -1,5 +1,7 @@
 # Prometheus Reloader
 
+[![Build Status](https://api.cirrus-ci.com/github/cirruslabs/actions-trigger.svg)](https://cirrus-ci.com/github/cirruslabs/actions-trigger) [![](https://images.microbadger.com/badges/version/cirrusci/actions-trigger.svg)](https://microbadger.com/images/cirrusci/actions-trigger) [![](https://images.microbadger.com/badges/image/cirrusci/actions-trigger.svg)](https://microbadger.com/images/cirrusci/actions-trigger)
+
 The container in this repository will watch up to 2 files for changes, and if those files change it will hit an API endpoint. This is extremely useful when you need to reload Prometheus when the rules or configuration files changes.
 
 Based on: https://github.com/tolleiv/docker-misc/tree/master/2017-prometheus-reload
