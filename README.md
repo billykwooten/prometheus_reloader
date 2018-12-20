@@ -8,24 +8,26 @@ The container in this repository will watch up to 2 files for changes, and if th
 * [docker](https://www.docker.com)
 
 ## Building the container
-
 ```
 git clone https://github.com/billykwooten/prometheus_reloader.git
 cd prometheus_reloader
 bash scripts/cibuild.sh
 ```
 
+Once the container builds, it will be tagged with the latest git commit.
+
+
 ## Running the container
 
 You will need to mount in the directory that contains the files you want to watch.
 
 ```
-# docker run --name prometheus_reloader -d --restart always -v $(pwd):/mnt prometheus_reloader <URL WEBHOOK> <FILE1> <FILE2>
+# docker run --name prometheus_reloader -d --restart always -v $(pwd):/mnt prometheus_reloader:<IMAGE TAG> <URL WEBHOOK> <FILE1> <FILE2>
 ```
 
 Running Example:
 ```
 # ls
 testfile1 testfile2
-# docker run --name prometheus_reloader -d --restart always -v $(pwd):/mnt prometheus_reloader http://server.local:9090/-/reload /mnt/testfile1 /mnt/testfile2
+# docker run --name prometheus_reloader -d --restart always -v $(pwd):/mnt prometheus_reloader:dcd7135ef http://server.local:9090/-/reload /mnt/testfile1 /mnt/testfile2
 ```
