@@ -6,5 +6,5 @@ branches:
     - master
     - development 
 
-script: ./scripts/run-tests.sh
+script: ./scripts/cibuild.sh
 
