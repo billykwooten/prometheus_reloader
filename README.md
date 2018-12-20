@@ -32,4 +32,14 @@ Running Example:
 # ls
 testfile1 testfile2
 # docker run --name prometheus_reloader -d --restart always -v $(pwd):/mnt prometheus_reloader:dcd7135ef http://server.local:9090/-/reload /mnt/testfile1 /mnt/testfile2
+# docker logs prometheus_reloader
+>>>>>>>>>>>>>>>>>>>>>>>
+[1545286342] Starting Prometheus Reloader
+[1545286342] Loaded files:
+[1545286342]    - /mnt/first.rules
+[1545286342]    - /mnt/prometheus.yml
+[1545286342] Waiting for file changes...
+
+[1545286362] Trigger refresh due to /mnt/first.rules change
+[1545286372] Trigger refresh due to /mnt/prometheus.yml change
 ```
